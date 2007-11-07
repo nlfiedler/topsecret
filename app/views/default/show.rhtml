@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th>System</th>
+    <th>Account</th>
+    <th>Secret</th>
+  </tr>
+
+<% for record in @records %>
+  <tr>
+    <td>
+        <% unless record.url.blank? %>
+        <%= link_to "#{h record.system_name}", record.url %>
+        <% else %>
+        <%= h record.system_name %>
+        <% end %>
+    </td>
+    <td><%=h record.username %></td>
+    <td><%=h record.password %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= pagination_links @record_pages %>
+
+<p><%= link_to "Back", :action => 'index' %></p>

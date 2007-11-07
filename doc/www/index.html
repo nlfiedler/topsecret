@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 1st December 2004), see www.w3.org" />
+
+  <title>TopSecret Project Page</title>
+</head>
+
+<body>
+  <h1>TopSecret Project</h1>
+
+  <p>The TopSecret project is a <a href=
+  "http://www.rubyonrails.org/">Ruby on Rails</a> web application that
+  provides an easy way for you to manage your passwords. Passwords are
+  grouped into categories of your choosing, and are persisted to a
+  database (typically <a href="http://www.mysql.com/">MySQL</a>). The
+  application itself is, of course, password protected.</p>
+
+  <h2>Documentation</h2>
+
+  <p>At the moment there is no documentation, other than this web page.
+  Fortunately, running TopSecret is about as easy as any other Rails
+  application.</p>
+
+  <ul>
+    <li>Configure your database connection in
+    <tt>config/database.yml</tt></li>
+
+    <li>Create the database instance (e.g.
+    <tt>topsecret_production</tt>)</li>
+
+    <li>Create a config file for your LDAP server, which is used for
+    logging into the application, by editing
+    <tt>config/topsecret.yml</tt></li>
+
+    <li>Start the application: <tt>./script/server</tt></li>
+  </ul>
+
+  <h2>Caveats</h2>
+
+  <p>At the moment, TopSecret requires an LDAP server to authenticate
+  anyone attempting to log in to the application. Naturally, this will
+  be corrected at some point. One obvious alternative would be for
+  TopSecret to maintain a set of users in the database, but this gets
+  into the whole admin thing, which requires more views and probably
+  some way to assign the admin password.</p>
+
+  <h2>Getting Help</h2>
+
+  <p>You can, of course, write to the author, but he would prefer that
+  you use one of the <a href=
+  "http://rubyforge.org/mail/?group_id=3651">mailing lists</a>, that
+  way questions that get answered are archived forever, so all will
+  benefit.</p>
+</body>
+</html>

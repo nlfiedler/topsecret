@@ -1,0 +1,28 @@
+<% unless @categories.empty? %>
+<table cellspacing="5">
+    <tr>
+    <th>Name</th>
+  </tr>
+  
+<% for category in @categories %>
+  <tr>
+    <td><%= link_to "#{h category.name}", :action => 'show', :id => category %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => category %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => category }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= pagination_links @category_pages %>
+<% else %>
+
+<p>No records found.</p>
+
+<% end %>
+
+<h4>New Category</h4>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag "Create" %>
+<% end %>

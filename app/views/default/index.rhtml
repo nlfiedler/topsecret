@@ -1,0 +1,9 @@
+<h4>Categories</h4>
+<ul>
+<% for category in @categories %>
+  <li><%= link_to "#{h category.name}", :action => 'show', :id => category %></li>
+<% end %>
+</ul>
+
+<p><%= link_to "Edit Categories", :controller => 'categories', :action => 'list' %><br/>
+<%= link_to "Edit Records", :controller => 'records', :action => 'list' %></p>

@@ -1,0 +1,15 @@
+<%= form_tag :action => "login" %>
+<table>
+  <tr>
+    <td><label for="username">Username:</label></td>
+    <td><%= text_field_tag :username %></td>
+  </tr>
+  <tr>
+    <td><label for="password">Password:</label></td>
+    <td><%= password_field_tag :password %></td>
+  </tr>
+</table>
+<p>
+  <%= submit_tag "Log in" %>
+</p>
+<%= end_form_tag %>

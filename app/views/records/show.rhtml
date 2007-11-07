@@ -1,0 +1,17 @@
+<table>
+<% for column in Record.content_columns %>
+<tr>
+  <td><strong><%= column.human_name %>:</strong></td>
+  <td><%=h @record.send(column.name) %></td>
+</tr>
+<% end %>
+<% for passwd in @record.old_passwords %>
+<tr>
+  <td><strong>Old password:</strong></td>
+  <td><%=h passwd.password %></td>
+</tr>
+<% end %>
+</table>
+
+<%= link_to 'Edit', :action => 'edit', :id => @record %> |
+<%= link_to 'Back', :action => 'list' %>

@@ -1,0 +1,38 @@
+<% unless @records.empty? %>
+<table cellspacing="5">
+    <tr>
+    <th>System</th>
+    <th>Account</th>
+    <th>Secret</th>
+  </tr>
+
+<% for record in @records %>
+  <tr>
+    <td>
+        <% unless record.url.blank? %>
+        <%= link_to "#{h record.system_name}", record.url %>
+        <% else %>
+        <%= h record.system_name %>
+        <% end %>
+    </td>
+    <td><%=h record.username %></td>
+    <td><%=h record.password %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => record %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => record }, :confirm => 'Are you sure?', :method => :post %></td>
+    <td><%= link_to 'Details', :action => 'show', :id => record %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= pagination_links @record_pages %>
+<% else %>
+
+<p>No records found.</p>
+
+<% end %>
+
+<h4>New Record</h4>
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag "Create" %>
+<% end %>

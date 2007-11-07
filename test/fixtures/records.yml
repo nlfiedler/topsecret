@@ -1,0 +1,22 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+google:
+  id: 1
+  system_name: Google
+  username: googler
+  password: relgoog
+  category_id: 1
+  user_id: 1
+yahoo:
+  id: 2
+  system_name: Yahoo!
+  username: yahooligan
+  password: nagiloohay
+  category_id: 1
+  user_id: 1
+first:
+  id: 3
+  system_name: First
+  username: first
+  password: tsrif
+  category_id: 1
+  user_id: 1

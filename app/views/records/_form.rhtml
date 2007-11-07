@@ -1,0 +1,26 @@
+<%= error_messages_for 'record' %>
+
+<!--[form:record]-->
+<table>
+  <tr>
+    <td><label for="record_system_name">System:</label></td>
+    <td><%= text_field 'record', 'system_name' %></td>
+  </tr>
+  <tr>
+    <td><label for="record_username">Account:</label></td>
+    <td><%= text_field 'record', 'username' %></td>
+  </tr>
+    <td><label for="record_password">Secret:</label></td>
+    <td><%= text_field 'record', 'password' %></td>
+  </tr>
+  <tr>
+    <td><label for="record_category">Category:</label></td>
+    <td><%= collection_select 'record', 'category_id', @categories, :id, :name %></td>
+  </tr>
+  <tr>
+    <td><label for="record_url">URL:</label></td>
+    <td><%= text_field 'record', 'url' %><br/>
+       <small>(URL is optional)</small></td>
+  </tr>
+</table>
+<!--[eoform:record]-->
