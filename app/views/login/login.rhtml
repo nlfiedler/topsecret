@@ -1,4 +1,4 @@
-<%= form_tag :action => "login" %>
+<% form_tag :action => "login" do %>
 <table>
   <tr>
     <td><label for="username">Username:</label></td>
@@ -12,4 +12,4 @@
 <p>
   <%= submit_tag "Log in" %>
 </p>
-<%= end_form_tag %>
+<% end %>

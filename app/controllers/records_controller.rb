@@ -1,5 +1,5 @@
 #--
-# Copyright (C) 2007  Nathan Fielder
+# Copyright (C) 2007-2008  Nathan Fielder
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ class RecordsController < ApplicationController
   def list
     user = User.find(session[:user_id])
     @categories = user.categories.find(:all, :order => 'name')
-    @record_pages, @records = paginate(:records, :order => :system_name,
+    @records = Record.paginate(:page => params[:page], :order => :system_name,
             :conditions => ["user_id = ?", session[:user_id]])
     true
   end

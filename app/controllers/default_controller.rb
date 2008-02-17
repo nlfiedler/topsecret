@@ -1,5 +1,5 @@
 #--
-# Copyright (C) 2007  Nathan Fielder
+# Copyright (C) 2007-2008  Nathan Fielder
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -43,10 +43,8 @@ class DefaultController < ApplicationController
     user = User.find(session[:user_id])
     cat = user.categories.find(params[:id])
     unless cat.nil?
-      @record_pages = Paginator.new(self, cat.records.count, 10, params[:page])
-      @records = cat.records.find(:all, :order => 'system_name',
-        :limit => @record_pages.items_per_page,
-        :offset => @record_pages.current.offset)
+      @records = Record.paginate(:page => params[:page], :order => :system_name,
+        :conditions => ["user_id = ?", user.id])
     end
   end
 end

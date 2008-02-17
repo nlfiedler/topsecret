@@ -1,5 +1,5 @@
 #--
-# Copyright (C) 2007  Nathan Fielder
+# Copyright (C) 2007-2008  Nathan Fielder
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ class CategoriesController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @category_pages, @categories = paginate(:categories, :order => :name,
+    @categories = Category.paginate(:page => params[:page], :order => :name,
             :conditions => ["user_id = ?", session[:user_id]])
   end
 

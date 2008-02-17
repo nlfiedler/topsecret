@@ -20,6 +20,6 @@
 <% end %>
 </table>
 
-<%= pagination_links @record_pages %>
+<%= will_paginate @records %>
 
 <p><%= link_to "Back", :action => 'index' %></p>
